@@ -158,6 +158,8 @@ MonoBehaviour:
   - level04
   - level05
   levelMoonNumbers: 0100000003000000060000000400000008000000
+  start: {fileID: 0}
+  instructions: {fileID: 0}
 --- !u!4 &170886373
 Transform:
   m_ObjectHideFlags: 0
@@ -685,7 +687,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 2b73fdf857cef43c9ad3a66aba8f8541, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1358,6 +1360,7 @@ SceneRoots:
   - {fileID: 1356054533}
   - {fileID: 1550076447}
   - {fileID: 170886373}
+  - {fileID: 1005665798}
   - {fileID: 813485483}
   - {fileID: 4717434028932323606}
   - {fileID: 1629244335}
@@ -1368,4 +1371,3 @@ SceneRoots:
   - {fileID: 856721302}
   - {fileID: 1560275773}
   - {fileID: 642416338}
-  - {fileID: 1005665798}
