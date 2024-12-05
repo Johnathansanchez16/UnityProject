@@ -5,7 +5,7 @@ using TMPro; // Import the TextMesh Pro namespace
 
 public class scoreManager : MonoBehaviour
 {
-    public int score = 0; // Initial score
+    public static int score = 0; // Initial score
     public TextMeshProUGUI scoreTextTMP; // TextMesh Pro component for score display
 
     void Start()
@@ -30,5 +30,8 @@ public class scoreManager : MonoBehaviour
         {
             Debug.LogError("scoreTextTMP is not assigned!"); // Log error if the Text component is not assigned
         }
+    }
+    public int getScore(){
+        return score;
     }
 }

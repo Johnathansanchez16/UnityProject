@@ -9,7 +9,6 @@ public class LevelManager : MonoBehaviour
     private int numberOfMoons;                     // Number of moons in the current level
     [SerializeField] private int[] levelMoonNumbers = { 1, 3, 6, 4, 8}; // Number of moons for each level
     public static LevelManager instance;           // Singleton instance
-    
 
     void Awake()
     {
