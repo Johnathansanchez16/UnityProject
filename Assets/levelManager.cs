@@ -9,6 +9,8 @@ public class LevelManager : MonoBehaviour
     private int numberOfMoons;                     // Number of moons in the current level
     [SerializeField] private int[] levelMoonNumbers = { 1, 3, 6, 4, 8}; // Number of moons for each level
     public static LevelManager instance;           // Singleton instance
+    private scoreManager scoreMan; // Declare without initialization
+    private int score;
 
     void Awake()
     {
@@ -22,6 +24,8 @@ public class LevelManager : MonoBehaviour
         {
             Destroy(gameObject); // Destroy duplicate
         }
+        
+        
     }
 
     
@@ -42,6 +46,11 @@ public class LevelManager : MonoBehaviour
             // Activate the scene when you're ready, here you might want to wait for certain conditions
             // For demonstration, we'll activate it immediately for now
             asyncOperation.allowSceneActivation = true; // Activate the scene
+
+            GameObject scoreManagerObj = GameObject.FindWithTag("scoreManager");
+            scoreMan = scoreManagerObj.GetComponent<scoreManager>();
+            
+        
         }
         else
         {
@@ -52,16 +61,23 @@ public class LevelManager : MonoBehaviour
 
     public void CompleteLevel()
     {
+        if(scoreMan!=null){
+            Debug.Log(scoreMan.getScore());
+        }
+        else{
+            Debug.Log("Data not set");
+        }
+        
+         
         currentSceneIndex++;
+        
         if (currentSceneIndex < sceneNames.Length)
         {
             LoadLevel(currentSceneIndex); // Load the next level
         }
         else
         {
-            Debug.Log("All levels completed! Resetting to level 1.");
-            currentSceneIndex = 0; // Reset to the first level
-            LoadLevel(currentSceneIndex); // Start over
+            SceneManager.LoadSceneAsync("end");
         }
     }
 
@@ -81,4 +97,7 @@ public class LevelManager : MonoBehaviour
     {
         LoadLevel(currentSceneIndex);
     }
+    // public void AddScore(int score){
+    //     this.score+=score;
+    // }
 }

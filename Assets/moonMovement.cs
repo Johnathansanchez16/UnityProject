@@ -77,10 +77,10 @@ public class moonMovement : MonoBehaviour
 
     void Teleport()
     {
-        Vector3 randomPosition = Camera.main.ViewportToWorldPoint(
-            new Vector3(Random.Range(0.1f, 0.9f), Random.Range(0.1f, 0.9f), 0)
-        );
-        randomPosition.z = transform.position.z;
-        transform.position = randomPosition;
+    Vector3 randomPosition = Camera.main.ViewportToWorldPoint(
+        new Vector3(Random.Range(0.1f, 0.9f), Random.Range(0.1f, 0.9f), 0)
+    );
+    randomPosition.z = transform.position.z;
+    transform.position = randomPosition;
     }
 }

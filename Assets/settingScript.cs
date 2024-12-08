@@ -6,6 +6,18 @@ public class SettingsManager : MonoBehaviour
     [SerializeField] private GameObject settingsMenu; // Reference to the settings menu GameObject
     [SerializeField] private Button settingsButton;  // Reference to the settings button
     [SerializeField] private Button resumeButton;    // Reference to the resume button
+    public static SettingsManager Instance;
+
+
+    private void Awake()
+    {
+        // Singleton pattern
+        if (Instance == null)
+        {
+            DontDestroyOnLoad(this.gameObject);
+            Instance = this;
+        }
+    }
 
     private void Start()
     {
@@ -20,12 +32,14 @@ public class SettingsManager : MonoBehaviour
     // Show the settings menu
     private void OpenSettings()
     {
+        Time.timeScale = 0f;
         settingsMenu.SetActive(true);
     }
 
     // Hide the settings menu
     private void CloseSettings()
     {
+        Time.timeScale = 1f;
         settingsMenu.SetActive(false);
     }
 }

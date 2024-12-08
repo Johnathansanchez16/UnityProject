@@ -5,11 +5,12 @@ using TMPro; // Import the TextMesh Pro namespace
 
 public class scoreManager : MonoBehaviour
 {
-    public static int score = 0; // Initial score
+    public int score = 0; // Initial score
     public TextMeshProUGUI scoreTextTMP; // TextMesh Pro component for score display
 
     void Start()
     {
+        score=0;
         UpdateScoreUI(); // Initialize score display
     }
 
@@ -32,6 +33,7 @@ public class scoreManager : MonoBehaviour
         }
     }
     public int getScore(){
+        Debug.Log("Get Score Called Score:"+score);
         return score;
     }
 }

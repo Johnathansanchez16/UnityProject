@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - settings
+  - scoreManager
+  - persistentData
   layers:
   - Default
   - TransparentFX
